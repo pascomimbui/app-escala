@@ -1,0 +1,63 @@
+﻿
+> app-escala-pascom@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 4.8s
+  Running TypeScript ...
+  Finished TypeScript in 4.4s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/12) ...
+  Generating static pages using 11 workers (3/12) 
+  Generating static pages using 11 workers (6/12) 
+node.exe : ReferenceError: 
+location is not defined
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\
+Users\joaovictor\AppData\Ro
+a ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Ref  
+  erenceError: location    
+ is not defined:String)    
+ [], RemoteException
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+    at <unknown> (C:\Desenv
+olvimento\app-escala-pascom
+\.next\server\chunks\ssr\_0
+v81jq3._.js:1:7317)
+  Generating static pages using 11 workers (9/12) 
+Ô£ô Generating static pages using 11 workers (12/12) in 350ms
+  Finalizing page optimization ...
+
+Route (app)
+Ôöî Ôùï /
+Ôö£ Ôùï /_not-found
+Ôö£ Ôùï /admin
+Ôö£ Ôùï /admin/equipe
+Ôö£ Ôùï /admin/eventos
+Ôö£ Ôùï /admin/eventos/criar
+Ôö£ Ôùï /admin/transmissoes
+Ôö£ Ôùï /admin/whatsapp
+Ôö£ ãÆ /api/notifications
+Ôö£ ãÆ /api/notifications/withdrawal
+Ôö£ ãÆ /api/whatsapp/status
+Ôö£ ãÆ /api/youtube
+Ôö£ Ôùï /cadastro
+Ôö£ ãÆ /evento/[id]
+Ôö£ Ôùï /perfil
+Ôöö ãÆ /troca/[id]
+
+
+Ôùï  (Static)   prerendered as static content
+ãÆ  (Dynamic)  server-rendered on demand
+

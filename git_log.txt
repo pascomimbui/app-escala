@@ -1,0 +1,2 @@
+﻿a6349bd feat: Escala PASCOM - Sistema completo de gerenciamento de escalas
+fb94cfe Initial commit from Create Next App
