@@ -7,10 +7,9 @@ import { ptBR } from 'date-fns/locale';
 import { createClient } from '@/lib/supabase/client';
 import { useUser } from '@/components/layout/UserContext';
 import { useToast } from '@/components/layout/Toast';
-import { getRoleDisplay, formatDateBR } from '@/lib/utils';
 import { useRealtimeEvents } from '@/lib/useRealtimeEvents';
 import {
-  Shield, Calendar, Users, BarChart3, FileJson, Plus, ArrowLeft,
+  Shield, Calendar, Users, BarChart3, FileJson, ArrowLeft,
   TrendingUp, Clock, ChevronRight, Eye, Trash2, Radio, CheckCircle, AlertCircle
 } from 'lucide-react';
 
@@ -126,7 +125,8 @@ export default function AdminPage() {
 
       if (upcoming) {
         setRecentEvents(
-          upcoming.map((evt) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          upcoming.map((evt: any) => {
             const roles = (evt.event_roles as { id: string; assignments: { id: string } | { id: string }[] }[]) || [];
             const totalR = roles.length;
             // Normalize: Supabase returns object instead of array due to UNIQUE constraint

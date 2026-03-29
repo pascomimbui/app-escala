@@ -8,6 +8,7 @@ import { useToast } from '@/components/layout/Toast';
 import { formatDateBR, getDayOfWeek, getRoleDisplay, getEventStatus, formatPhone, normalizeEventData } from '@/lib/utils';
 import type { EventWithRoles, User } from '@/lib/types';
 import { ArrowLeft, Clock, Calendar, UserPlus, X, Repeat2, Users } from 'lucide-react';
+import Image from 'next/image';
 import { useRealtimeEvents } from '@/lib/useRealtimeEvents';
 
 export default function EventoPage() {
@@ -240,7 +241,7 @@ export default function EventoPage() {
       {/* Event Header */}
       {event.youtube_thumbnail && (
         <div className="w-full aspect-video rounded-2xl overflow-hidden mb-4 shadow-lg border border-[var(--border-color)]">
-          <img src={event.youtube_thumbnail} alt="Capa da Transmissão" className="w-full h-full object-cover" />
+          <Image src={event.youtube_thumbnail} alt="Capa da Transmissão" className="w-full h-full object-cover" fill unoptimized />
         </div>
       )}
 

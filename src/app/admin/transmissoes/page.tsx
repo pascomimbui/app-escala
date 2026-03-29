@@ -6,6 +6,7 @@ import { useToast } from '@/components/layout/Toast';
 import { useUser } from '@/components/layout/UserContext';
 import { createClient } from '@/lib/supabase/client';
 import { ArrowLeft, Radio, CalendarPlus, CheckCircle, RefreshCw, Layers } from 'lucide-react';
+import Image from 'next/image';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
@@ -53,14 +54,14 @@ export default function YouTubeTransmissionsPage() {
       if (dbEvents) {
         ytEvents.forEach(yt => {
           const ytDate = format(new Date(yt.startTime * 1000), 'yyyy-MM-dd');
-          // simple check: if any DB event has the exact same date and is extremely similar
-          const exists = dbEvents.some(d => d.date === ytDate);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const exists = dbEvents.some((d: any) => d.date === ytDate);
           if (exists) synced.add(yt.videoId);
         });
       }
       setSyncedVideoIds(synced);
 
-    } catch (err) {
+    } catch {
       showToast('Erro ao buscar transmissões do YouTube', 'error');
     } finally {
       setLoading(false);
@@ -116,7 +117,7 @@ export default function YouTubeTransmissionsPage() {
 
       showToast('Evento importado e criado! 🎉', 'success');
       setSyncedVideoIds(prev => new Set(prev).add(ytEvent.videoId));
-    } catch (err) {
+    } catch {
       showToast('Erro ao importar evento', 'error');
     } finally {
       setImportingId(null);
@@ -201,7 +202,7 @@ export default function YouTubeTransmissionsPage() {
               <div key={evt.videoId} className={`glass rounded-2xl p-4 flex gap-4 transition-all ${isSynced ? 'opacity-60 grayscale-[0.5]' : ''}`}>
                 <div className="w-24 h-16 rounded-lg bg-[var(--surface-hover)] overflow-hidden shrink-0 relative flex items-center justify-center">
                   {evt.thumbnail ? (
-                    <img src={evt.thumbnail} alt="thumb" className="w-full h-full object-cover" />
+                    <Image src={evt.thumbnail} alt="thumb" className="w-full h-full object-cover" fill unoptimized />
                   ) : (
                     <Radio className="w-6 h-6 text-[var(--muted)] opacity-30" />
                   )}

@@ -1,12 +1,12 @@
 'use client';
 
-import { format, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay } from 'date-fns';
+import { format, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import type { EventWithRoles } from '@/lib/types';
 import { getEventStatus, getRoleDisplay, formatPhone } from '@/lib/utils';
 import { useUser } from '@/components/layout/UserContext';
 import { useRouter } from 'next/navigation';
-import { Clock, User as UserIcon } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 interface WeeklyViewProps {
   currentDate: Date;

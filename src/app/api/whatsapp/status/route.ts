@@ -6,7 +6,7 @@ const baseUrl = process.env.EVOLUTION_API_URL || 'http://localhost:8080';
 const apiKey = process.env.EVOLUTION_API_KEY || '';
 const instanceName = process.env.EVOLUTION_INSTANCE_NAME || 'escala-pascom';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const res = await fetch(`${baseUrl}/instance/connectionState/${instanceName}`, {
       headers: { apikey: apiKey },

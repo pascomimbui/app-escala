@@ -30,14 +30,14 @@ export function useRealtimeEvents(onUpdate: () => void) {
           schema: 'public',
           table: 'assignments',
         },
-        (_payload) => {
+        () => {
           // Small debounce to avoid rapid-fire re-fetches
           setTimeout(() => {
             onUpdateRef.current();
           }, 300);
         }
       )
-      .subscribe((status) => {
+      .subscribe((status: string) => {
         if (status === 'SUBSCRIBED') {
           console.log('[Realtime] Subscribed to assignments changes');
         }

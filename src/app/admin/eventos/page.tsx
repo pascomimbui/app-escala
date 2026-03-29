@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { useToast } from '@/components/layout/Toast';
-import { ArrowLeft, FileJson, Check, AlertTriangle, Trash2, Upload } from 'lucide-react';
+import { ArrowLeft, FileJson, Check, AlertTriangle, Upload } from 'lucide-react';
 import type { EventImportSimple } from '@/lib/types';
 
 interface PreviewEvent extends EventImportSimple {

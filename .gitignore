@@ -49,5 +49,12 @@ ts_check*.txt
 ts_errors.txt
 build_log*.txt
 build_output.txt
+build_full_output.txt
+build_error_log*.txt
+lint_output*.txt
 output.txt
 git_status.txt
+git_log.txt
+location_line.txt
+
+.vercel

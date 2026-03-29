@@ -1,0 +1,58 @@
+﻿Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 3.5s
+  Running TypeScript ...
+node.exe : Failed to type 
+check.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\
+Users\joaovictor\AppData\Ro
+a ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Fai  
+  led to type check.:Str   
+ ing) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+./src/app/admin/transmissoe
+s/page.tsx:58:40
+Type error: Parameter 'd' 
+implicitly has an 'any' 
+type.
+
+  [90m56 |[0m           
+[36mconst[0m ytDate = 
+format([36mnew[0m 
+[33mDate[0m(yt.startTime 
+* [35m1000[0m), 
+[32m'yyyy-MM-dd'[0m);
+  [90m57 |[0m           
+[90m// simple check: if 
+any DB event has the exact 
+same date and is extremely 
+similar[0m
+[31m[1m>[0m [90m58 
+|[0m           
+[36mconst[0m exists = 
+dbEvents.some(d => d.date 
+=== ytDate);
+  [90m   |[0m            
+                           
+ [31m[1m^[0m
+  [90m59 |[0m           
+[36mif[0m (exists) 
+synced.add(yt.videoId);
+  [90m60 |[0m         });
+  [90m61 |[0m       }
+Next.js build worker 
+exited with code: 1 and 
+signal: null

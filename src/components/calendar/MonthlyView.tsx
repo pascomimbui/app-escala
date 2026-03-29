@@ -8,12 +8,11 @@ import {
   eachDayOfInterval,
   format,
   isSameMonth,
-  isSameDay,
   isToday,
 } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import type { EventWithRoles } from '@/lib/types';
-import { getDayStatus, getStatusColor } from '@/lib/utils';
+import { getDayStatus } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { X, Clock } from 'lucide-react';

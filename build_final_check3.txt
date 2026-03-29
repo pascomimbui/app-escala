@@ -1,0 +1,49 @@
+﻿Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 3.2s
+  Running TypeScript ...
+node.exe : Failed to type 
+check.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\
+Users\joaovictor\AppData\Ro
+a ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Fai  
+  led to type check.:Str   
+ ing) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+./src/lib/useRealtimeEvents
+.ts:40:19
+Type error: Parameter 
+'status' implicitly has an 
+'any' type.
+
+  [90m38 |[0m         }
+  [90m39 |[0m       )
+[31m[1m>[0m [90m40 
+|[0m       
+.subscribe((status) => {
+  [90m   |[0m            
+       [31m[1m^[0m
+  [90m41 |[0m         
+[36mif[0m (status === 
+[32m'SUBSCRIBED'[0m) {
+  [90m42 |[0m           c
+onsole.log([32m'[Realtime]
+ Subscribed to assignments 
+changes'[0m);
+  [90m43 |[0m         }
+Next.js build worker 
+exited with code: 1 and 
+signal: null

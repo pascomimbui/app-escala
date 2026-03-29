@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase/client';
 import { useUser } from '@/components/layout/UserContext';
 import { useToast } from '@/components/layout/Toast';
 import { getRoleDisplay, formatDateBR, getDayOfWeek } from '@/lib/utils';
-import { Repeat2, Check, X, Radio } from 'lucide-react';
+import { Repeat2, Check, X } from 'lucide-react';
 
 interface SwapData {
   id: string;

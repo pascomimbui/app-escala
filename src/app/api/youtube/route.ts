@@ -33,6 +33,7 @@ export async function GET() {
       return NextResponse.json({ events: [] });
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const streamsTab = tabs.find((t: any) => 
       t.tabRenderer?.title === 'Ao vivo' || 
       t.tabRenderer?.title === 'Live' || 
@@ -44,8 +45,10 @@ export async function GET() {
     }
 
     const contents = streamsTab.tabRenderer?.content?.richGridRenderer?.contents || [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const scheduledEvents: any[] = [];
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     contents.forEach((item: any) => {
       const video = item.richItemRenderer?.content?.videoRenderer;
       if (video) {

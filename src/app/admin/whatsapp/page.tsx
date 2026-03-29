@@ -8,7 +8,7 @@ import { ArrowLeft, RefreshCw, Smartphone, QrCode, LogOut, CheckCircle, WifiOff 
 
 interface ConnectionStatus {
   state: 'open' | 'connecting' | 'not_found' | 'error' | 'unknown';
-  data?: any;
+  data?: Record<string, unknown>;
 }
 
 export default function WhatsAppAdminPage() {
@@ -155,6 +155,7 @@ export default function WhatsAppAdminPage() {
             ) : qrCodeData ? (
               <>
                 <div className="bg-white p-4 rounded-xl mb-4 animate-scale-in">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={qrCodeData} alt="WhatsApp QR Code" className="w-48 h-48" />
                 </div>
                 <h3 className="text-lg font-bold text-[var(--foreground)]">Leia o QR Code</h3>

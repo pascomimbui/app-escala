@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useToast } from '@/components/layout/Toast';
-import { FileJson, CheckCircle, AlertCircle, Save, Loader2, Play } from 'lucide-react';
+import { FileJson, CheckCircle, AlertCircle, Save, Loader2 } from 'lucide-react';
 import type { User } from '@/lib/types';
 import { format } from 'date-fns';
 
@@ -101,7 +101,8 @@ export default function ImportarEscalas() {
 
       const rows: PreviewRow[] = parsed.map((item, idx) => {
         const rowId = `row_${idx}_${Date.now()}`;
-        const evt = (eventsData || []).find(e => e.date === item.date && e.time === item.time);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const evt = (eventsData || []).find((e: any) => e.date === item.date && e.time === item.time);
         
         let eventId = null;
         let cameraRoleId = null;
@@ -114,6 +115,7 @@ export default function ImportarEscalas() {
 
         if (evt) {
           eventId = evt.id;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const roles = (evt.event_roles || []) as any[];
           
           const camRole = roles.find(r => r.role === 'camera');
@@ -157,8 +159,8 @@ export default function ImportarEscalas() {
       setPreviewVars(rows);
       showToast('JSON pareado com sucesso', 'success');
       
-    } catch (err: any) {
-      showToast(err.message || 'Erro ao processar', 'error');
+    } catch (err: unknown) {
+      showToast((err instanceof Error ? err.message : null) || 'Erro ao processar', 'error');
     } finally {
       setIsParsing(false);
     }
@@ -191,6 +193,7 @@ export default function ImportarEscalas() {
       setPreviewVars([...updatedRows]);
 
       try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const inserts: any[] = [];
         // Insert Camera if changed and empty
         if (row.cameraRoleId && row.selectedCameraUserId && row.selectedCameraUserId !== row.existingCameraUserId) {
@@ -212,7 +215,7 @@ export default function ImportarEscalas() {
 
         updatedRows[rowIndex].status = 'saved';
         successCount++;
-      } catch (err: any) {
+      } catch {
         updatedRows[rowIndex].status = 'error';
         updatedRows[rowIndex].errorMsg = 'Falha ao salvar';
       }

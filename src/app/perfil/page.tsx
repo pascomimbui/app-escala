@@ -3,7 +3,7 @@
 import { useUser } from '@/components/layout/UserContext';
 import { useToast } from '@/components/layout/Toast';
 import { formatPhone } from '@/lib/utils';
-import { Radio, LogOut, Phone, User as UserIcon, Calendar, Shield } from 'lucide-react';
+import { Radio, LogOut, Phone, Calendar, Shield } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function PerfilPage() {

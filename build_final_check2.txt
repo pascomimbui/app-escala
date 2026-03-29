@@ -1,0 +1,59 @@
+﻿Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 2.9s
+  Running TypeScript ...
+node.exe : Failed to type 
+check.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\
+Users\joaovictor\AppData\Ro
+a ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (Fai  
+  led to type check.:Str   
+ ing) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+
+./src/components/admin/Impo
+rtarEscalas.tsx:104:45
+Type error: Parameter 'e' 
+implicitly has an 'any' 
+type.
+
+  [90m102 |[0m ...     
+[36mconst[0m rows: 
+[33mPreviewRow[0m[] = 
+parsed.map((item, idx) => {
+  [90m103 |[0m ...       
+[36mconst[0m rowId = [32
+m`row_[0m${idx[32m}_[0m$
+{[33mDate[0m.now()[32m}`
+[0m;
+[31m[1m>[0m [90m104 
+|[0m ...       
+[36mconst[0m evt = 
+(eventsData || []).find(e 
+=> e.date === item.date && 
+e.time === ite...
+  [90m    |[0m           
+                           
+         [31m[1m^[0m
+  [90m105 |[0m ...       
+  [90m106 |[0m ...       
+[36mlet[0m eventId = 
+[36mnull[0m;
+  [90m107 |[0m ...       
+[36mlet[0m cameraRoleId 
+= [36mnull[0m;
+Next.js build worker 
+exited with code: 1 and 
+signal: null
